@@ -1,0 +1,28 @@
+{
+  "name": "qianji-contract",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx hardhat test",
+    "cmp": "npx hardhat compile",
+    "clean": "npx hardhat clean",
+    "deploy": "npx hardhat run scripts/deploy.js --network <network_name>"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "hardhat": "^2.18.1"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.1",
+    "@solvprotocol/erc-3525": "^1.4.0",
+    "bignumber.js": "^9.1.2",
+    "bip39": "^3.1.0",
+    "erc721a": "^4.2.3",
+    "ethereumjs-wallet": "^1.0.2",
+    "moment": "^2.29.4"
+  }
+}
