@@ -21,7 +21,7 @@ contract OpBrook is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("OP Brook", "OPB") {
+    constructor() Ownable(msg.sender) ERC721A("OP Brook", "OPB") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

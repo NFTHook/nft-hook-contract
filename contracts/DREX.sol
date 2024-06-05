@@ -20,7 +20,7 @@ contract Web3Flower is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Web3 Flower", "W3F") {
+    constructor() Ownable(msg.sender) ERC721A("Web3 Flower", "W3F") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

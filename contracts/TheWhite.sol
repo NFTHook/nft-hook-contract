@@ -21,7 +21,7 @@ contract TheWhite is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("TheWhite", "TWE") {
+    constructor() Ownable(msg.sender) ERC721A("TheWhite", "TWE") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

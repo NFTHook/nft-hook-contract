@@ -21,7 +21,7 @@ contract MoonRabbit is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Moon Rabbit", "MRT") {
+    constructor() Ownable(msg.sender) ERC721A("Moon Rabbit", "MRT") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

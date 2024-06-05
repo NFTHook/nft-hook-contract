@@ -20,7 +20,7 @@ contract Soul is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Soul", "Soul") {
+    constructor() Ownable(msg.sender) ERC721A("Soul", "Soul") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

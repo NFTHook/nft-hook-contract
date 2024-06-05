@@ -20,7 +20,7 @@ contract ZoraTree is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Zora Tree", "ZTE") {
+    constructor() Ownable(msg.sender) ERC721A("Zora Tree", "ZTE") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

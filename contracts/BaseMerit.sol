@@ -20,7 +20,7 @@ contract BaseMerit is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Base Merit-Manjushri's Protection", "BMM") {
+    constructor() Ownable(msg.sender) ERC721A("Base Merit-Manjushri's Protection", "BMM") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

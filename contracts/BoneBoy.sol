@@ -21,7 +21,7 @@ contract BoneBoy is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("BoneBoy", "BBY") {
+    constructor() Ownable(msg.sender) ERC721A("BoneBoy", "BBY") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

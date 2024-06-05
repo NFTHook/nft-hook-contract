@@ -20,7 +20,7 @@ contract FireCat is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Fire Cat", "FCT") {
+    constructor() Ownable(msg.sender) ERC721A("Fire Cat", "FCT") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

@@ -21,7 +21,7 @@ contract Llama is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Llama AI", "LLA") {
+    constructor() Ownable(msg.sender) ERC721A("Llama AI", "LLA") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

@@ -21,7 +21,7 @@ contract TheLastGod is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("TheLastGod", "TLG") {
+    constructor() Ownable(msg.sender) ERC721A("TheLastGod", "TLG") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

@@ -21,7 +21,7 @@ contract Allure is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Allure", "ALL") {
+    constructor() Ownable(msg.sender) ERC721A("Allure", "ALL") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

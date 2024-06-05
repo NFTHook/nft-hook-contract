@@ -21,7 +21,7 @@ contract InfernalFlame is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Infernal Flame", "IFE") {
+    constructor() Ownable(msg.sender) ERC721A("Infernal Flame", "IFE") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

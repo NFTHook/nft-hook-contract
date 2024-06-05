@@ -5,15 +5,12 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
-import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/common/ERC2981.sol";
 import "erc721a/contracts/ERC721A.sol";  
 import {DefaultOperatorFilterer} from "./DefaultOperatorFilterer.sol";
 
 
 contract VGiftBox is ERC721A, ERC2981, Ownable, DefaultOperatorFilterer {
-    using SafeMath for uint256;
-    using SafeMath for uint96;
 
     uint256 public constant MAX_SUPPLY = 20000;
     uint256 public constant FREE_SUPPLY = 3;
@@ -25,7 +22,7 @@ contract VGiftBox is ERC721A, ERC2981, Ownable, DefaultOperatorFilterer {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("VGiftBox", "VGB") {
+    constructor() Ownable(msg.sender) ERC721A("VGiftBox", "VGB") {
         _setDefaultRoyalty(msg.sender, 500);
     }
 

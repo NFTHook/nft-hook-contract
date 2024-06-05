@@ -21,7 +21,7 @@ contract OPCola is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("OP Cola", "OCA") {
+    constructor() Ownable(msg.sender) ERC721A("OP Cola", "OCA") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

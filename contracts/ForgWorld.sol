@@ -20,7 +20,7 @@ contract Bone is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Bone", "Bone") {
+    constructor() Ownable(msg.sender) ERC721A("Bone", "Bone") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

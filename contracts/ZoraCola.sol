@@ -21,7 +21,7 @@ contract ZoraCola is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Zora Cola Classic", "ZCC") {
+    constructor() Ownable(msg.sender) ERC721A("Zora Cola Classic", "ZCC") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

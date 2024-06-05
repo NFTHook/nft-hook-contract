@@ -18,7 +18,7 @@ contract WitchSpirit is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Witch Spirit", "WST") {
+    constructor() Ownable(msg.sender) ERC721A("Witch Spirit", "WST") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

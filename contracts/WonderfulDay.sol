@@ -21,7 +21,7 @@ contract WonderfulDay is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("A Wonderful Day", "AWD") {
+    constructor() Ownable(msg.sender) ERC721A("A Wonderful Day", "AWD") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

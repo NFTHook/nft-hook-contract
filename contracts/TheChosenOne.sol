@@ -35,7 +35,7 @@ contract TheChosenOne is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("TheChosenOne", "TCO") {
+    constructor() Ownable(msg.sender) ERC721A("TheChosenOne", "TCO") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

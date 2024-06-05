@@ -20,7 +20,7 @@ contract ZoraMerit is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Zora Merit-Manjushri's Protection", "ZMT") {
+    constructor() Ownable(msg.sender) ERC721A("Zora Merit-Manjushri's Protection", "ZMT") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

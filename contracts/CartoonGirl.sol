@@ -21,7 +21,7 @@ contract CartoonGirl is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Cartoon Girl", "CGL") {
+    constructor() Ownable(msg.sender) ERC721A("Cartoon Girl", "CGL") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

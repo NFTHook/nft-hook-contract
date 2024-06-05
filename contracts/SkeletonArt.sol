@@ -22,7 +22,7 @@ contract SkeletonArt is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Skeleton Art", "SAT") {
+    constructor() Ownable(msg.sender) ERC721A("Skeleton Art", "SAT") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

@@ -21,7 +21,7 @@ contract FatApe is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Fat Ape", "FAE") {
+    constructor() Ownable(msg.sender) ERC721A("Fat Ape", "FAE") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

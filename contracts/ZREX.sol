@@ -20,7 +20,7 @@ contract ZREX is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Zrex", "ZRE") {
+    constructor() Ownable(msg.sender) ERC721A("Zrex", "ZRE") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

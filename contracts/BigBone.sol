@@ -21,7 +21,7 @@ contract BigBone is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Big Bone", "BGB") {
+    constructor() Ownable(msg.sender) ERC721A("Big Bone", "BGB") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

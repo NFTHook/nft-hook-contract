@@ -22,7 +22,7 @@ contract Elementals is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Elementals", "ELS") {
+    constructor() Ownable(msg.sender) ERC721A("Elementals", "ELS") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

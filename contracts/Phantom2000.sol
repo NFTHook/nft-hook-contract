@@ -22,7 +22,7 @@ contract Phantom2000 is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Phantom 2000", "P2000") {
+    constructor() Ownable(msg.sender) ERC721A("Phantom 2000", "P2000") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

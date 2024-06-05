@@ -19,7 +19,7 @@ contract CoCoin is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Free!FUN", "Free!FUN") {
+    constructor() Ownable(msg.sender) ERC721A("Free!FUN", "Free!FUN") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

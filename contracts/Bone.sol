@@ -20,7 +20,7 @@ contract ForgWorld is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("ForgWorld", "FWD") {
+    constructor() Ownable(msg.sender) ERC721A("ForgWorld", "FWD") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

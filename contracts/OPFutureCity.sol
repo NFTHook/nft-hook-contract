@@ -21,7 +21,7 @@ contract OPFutureCity is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("OP Future City", "OFC") {
+    constructor() Ownable(msg.sender) ERC721A("OP Future City", "OFC") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

@@ -20,7 +20,7 @@ contract OpMerit is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("OP Merit-Manjushri's Protection", "OMM") {
+    constructor() Ownable(msg.sender) ERC721A("OP Merit-Manjushri's Protection", "OMM") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

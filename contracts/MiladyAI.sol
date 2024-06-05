@@ -21,7 +21,7 @@ contract MiladyAI is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Milady AI", "MAI") {
+    constructor() Ownable(msg.sender) ERC721A("Milady AI", "MAI") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

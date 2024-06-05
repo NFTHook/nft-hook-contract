@@ -22,7 +22,7 @@ contract HVMTL3D is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("HV-MTL 3D", "HM3") {
+    constructor() Ownable(msg.sender) ERC721A("HV-MTL 3D", "HM3") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

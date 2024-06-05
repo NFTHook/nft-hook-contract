@@ -20,7 +20,7 @@ contract Kitten is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Kitten", "KIT") {
+    constructor() Ownable(msg.sender) ERC721A("Kitten", "KIT") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

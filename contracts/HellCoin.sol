@@ -20,7 +20,7 @@ contract HellCoin is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("HellCoin", "HCO") {
+    constructor() Ownable(msg.sender) ERC721A("HellCoin", "HCO") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

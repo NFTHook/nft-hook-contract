@@ -21,7 +21,7 @@ contract ZoraWheelOfFortune is ERC721A, Ownable {
 
     event NewMint(address indexed msgSender, uint256 indexed mintQuantity);
 
-    constructor() ERC721A("Wheel Of Fortune", "WOF") {
+    constructor() Ownable(msg.sender) ERC721A("Wheel Of Fortune", "WOF") {
     }
 
     function _startTokenId() internal view override virtual returns (uint256) {

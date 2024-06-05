@@ -5,7 +5,6 @@ pragma solidity ^0.8.0;
 import "erc721a/contracts/ERC721A.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
-import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
 
 contract DeathFlower is ERC721A, Ownable {
@@ -25,7 +24,7 @@ contract DeathFlower is ERC721A, Ownable {
     mapping(address => bool) public wishImpled;
     address public reqdev;
 
-    constructor(address _reqdev) ERC721A("Death Flower", "DFR") {
+    constructor(address _reqdev) Ownable(msg.sender) ERC721A("Death Flower", "DFR") {
         require(_reqdev != address(0), "Invalid Req Address");
         reqdev = _reqdev;
     }
