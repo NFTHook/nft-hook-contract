@@ -44,7 +44,7 @@ contract TigerMumNFT is ERC721Enumerable, Ownable {
     string baseURI = "https://ipfs.io/ipfs/QmbcUcYPaHiRtymf56b7g19iJBF3TpFXdQhHMDyrQKvyiV/";
     string suffix = ".json";
 
-    constructor() ERC721("TigerMum", "TIGER") {
+    constructor() Ownable(msg.sender) ERC721("TigerMum", "TIGER") {
     }
 
     event NewSupply(uint256 totalSupply);

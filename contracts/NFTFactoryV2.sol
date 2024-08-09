@@ -10,6 +10,8 @@ contract NFTFactoryV2 is Ownable {
     event NFTCreated(address indexed nftAddress);
     event NFTMinted(address indexed nftAddress, address indexed minter, uint256 indexed quantity);
 
+    constructor() Ownable(msg.sender){}
+
     function createNFT(
         string memory name,
         string memory symbol,

@@ -27,7 +27,7 @@ contract NFT721 is ERC721A, Ownable {
         string memory tokenURI_,
         uint256 unitPrice_,
         uint256 unit3Price_
-    ) ERC721A(name_, symbol_) {
+    ) Ownable(msg.sender) ERC721A(name_, symbol_) {
         _tokenURI = tokenURI_;
         _unitPrice = unitPrice_;
         _unit3Price = unit3Price_;
