@@ -1,5 +1,5 @@
 const bip39 = require('bip39');
-const { hdkey } = require('ethereumjs-wallet');
+const { hdkey } = require('@ethereumjs/wallet');
 const { ethers } = require('ethers');
 // npx hardhat test ./test/gen_contract_addr.js
 describe("计算合约地址", function () {
@@ -18,7 +18,7 @@ describe("计算合约地址", function () {
             // 从助记词生成种子
             const seed = await bip39.mnemonicToSeed(deployerMnemonic);
             // 从种子生成HD钱包
-            const hdWallet = hdkey.fromMasterSeed(seed);
+            const hdWallet = hdkey.EthereumHDKey.fromMasterSeed(seed);
             // 获取第一个钱包
             const walletHdPath = "m/44'/60'/0'/0/0";
             const wallet = hdWallet.derivePath(walletHdPath).getWallet();

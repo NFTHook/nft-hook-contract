@@ -1,5 +1,5 @@
 const bip39 = require('bip39');
-const { hdkey } = require('ethereumjs-wallet');
+const { hdkey } = require('@ethereumjs/wallet');
 const { ethers } = require('ethers');
 // npx hardhat test ./test/gen_wallet.js 
 async function generateWallet() {
@@ -13,7 +13,7 @@ async function generateWallet() {
         const seed = await bip39.mnemonicToSeed(mnemonic);
         
         // 从种子生成HD钱包
-        const hdWallet = hdkey.fromMasterSeed(seed);
+        const hdWallet = hdkey.EthereumHDKey.fromMasterSeed(seed);
         
         // 获取第一个钱包
         const walletHdPath = "m/44'/60'/0'/0/0";

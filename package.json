@@ -13,16 +13,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
-    "hardhat": "^2.18.1"
+    "@nomicfoundation/hardhat-toolbox": "^7.0.0",
+    "hardhat": "^3.3.0"
   },
   "dependencies": {
+    "@ethereumjs/wallet": "^10.0.0",
     "@openzeppelin/contracts": "^5.0.1",
     "@solvprotocol/erc-3525": "^1.4.0",
     "bignumber.js": "^9.1.2",
     "bip39": "^3.1.0",
     "erc721a": "^4.2.3",
-    "ethereumjs-wallet": "^1.0.2",
     "moment": "^2.29.4"
   }
 }
